@@ -1,0 +1,28 @@
+en:
+  layouts:
+    header:
+      sample_app: "Sample App"
+      home: "Home"
+      help: "Help"
+      log_in: "Log In"
+      profile: "Profile"
+    messages:
+      success: "Sign in successfully!"
+      error: "Sign in fail, please try again!"
+  helpers:
+    page_title: "Ruby on Rails Tutorials Sample App"
+  static_pages:
+    home:
+      title: "Home"
+    help:
+      title: "Help"
+      sign_up: "Sign Up"
+      create_my_account: "Create My Account"
+      confirmation: "Confirmation"
+  sign_up: "Sign Up"
+  confirmation: "Confirmation"
+  create_my_account: "Create My Account"
+  sign_up_now: "Sign Up Now"
+  log_in: "Log In"
+  log_out: "Log Out"
+  invalid_email_password_combination: "Invalid Email or Password"
