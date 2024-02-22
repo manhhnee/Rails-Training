@@ -1,0 +1,14 @@
+vi:
+  layouts:
+    header:
+      sample_app: "Ứng dụng"
+      home: "Trang chủ"
+      help: "Trợ giúp"
+      log_in: "Đăng nhập"
+  helpers:
+    page_title: "Ruby on Rails Tutorials Sample App"
+  static_pages:
+    home:
+      title: "Trang chủ"
+    help:
+      title: "Trợ giúp"
