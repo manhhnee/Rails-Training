@@ -1,0 +1,17 @@
+vi:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              blank: "Không thể bỏ trống"
+              too_long: "quá dài (tối đa %{count} kí tự)"
+            email:
+              blank: "Không thể bỏ trống"
+              too_long: "quá dài (tối đa %{count} kí tự)"
+              invalid: "không hợp lệ"
+              taken: "đã tồn tại"
+            birthday:
+              blank: "Không thể bỏ trống"
+              birthday_within_last_100_years: "phải bé hơn 100 tuổi"

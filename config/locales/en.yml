@@ -12,3 +12,6 @@ en:
       title: "Home"
     help:
       title: "Help"
+      sign_up: "Sign Up"
+      create_my_account: "Create My Account"
+      confirmation: "Confirmation"

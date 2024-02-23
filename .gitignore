@@ -16,6 +16,7 @@
 .byebug_history
 
 /config/master.key
+/config/credentials.yml.enc
 
 /public/packs
 /public/packs-test
@@ -30,3 +31,7 @@ yarn-debug.log*
 test/
 
 .rubocop.yml
+
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml
