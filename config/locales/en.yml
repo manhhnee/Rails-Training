@@ -5,6 +5,9 @@ en:
       home: "Home"
       help: "Help"
       log_in: "Log In"
+    messages:
+      success: "Sign in successfully!"
+      error: "Sign in fail, please try again!"
   helpers:
     page_title: "Ruby on Rails Tutorials Sample App"
   static_pages:
@@ -15,3 +18,6 @@ en:
       sign_up: "Sign Up"
       create_my_account: "Create My Account"
       confirmation: "Confirmation"
+  sign_up: "Sign Up"
+  confirmation: "Confirmation"
+  create_my_account: "Create My Account"
