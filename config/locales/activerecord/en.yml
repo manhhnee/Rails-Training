@@ -15,3 +15,5 @@ en:
             birthday:
               blank: "can't be blank"
               birthday_within_last_100_years: "must be within the last 100 years"
+            gender:
+              blank: "can't be blank"
