@@ -23,6 +23,7 @@ gem "bootsnap", ">= 1.4.4", require: false
 
 source "https://rubygems.org"
 gem "bootstrap-sass", "3.4.1"
+
 gem "jquery-rails"
 gem "sass-rails", ">= 6"
 
