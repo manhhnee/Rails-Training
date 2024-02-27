@@ -11,7 +11,7 @@ class User < ApplicationRecord
   validates :email, presence: true, length: { maximum: Settings.DIGIT_255 },
                     format: { with: VALIDATE_EMAIL_REGEX }, uniqueness: true
 
-  validates :birthday, presence: true
+  validates :birthday, :gender, presence: true
   validate :birthday_within_last_100_years
 
   private
