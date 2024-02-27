@@ -23,12 +23,16 @@ gem "bootsnap", ">= 1.4.4", require: false
 
 source "https://rubygems.org"
 gem "bootstrap-sass", "3.4.1"
+gem "jquery-rails"
+gem "sass-rails", ">= 6"
 
 gem "rubocop"
 
 gem "bcrypt", "~> 3.1.7"
 
 gem "config"
+
+gem "importmap-rails"
 
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]

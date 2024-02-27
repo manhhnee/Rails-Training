@@ -5,6 +5,11 @@ vi:
       home: "Trang chủ"
       help: "Trợ giúp"
       log_in: "Đăng nhập"
+      log_out: "Đăng xuất"
+      profile: "Thông tin cá nhân"
+    messages:
+      success: "Đăng nhập thành công !"
+      error: "Đăng nhập thất bại, vui lòng thử lại !"
   helpers:
     page_title: "Ruby on Rails Tutorials Sample App"
   static_pages:
@@ -13,3 +18,14 @@ vi:
     help:
       title: "Trợ giúp"
       confirmation: "Xác nhận"
+  sessions:
+    new:
+      log_in: "Đăng nhập"
+      sign_up_now: "Đăng ký ngay"
+      new_user: "Người dùng mới"
+  users:
+    new:
+      sign_up: "Đăng ký"
+      create_my_account: "Tạo tài khoản mới"
+      confirmation: "Xác nhận"
+  invalid_email_password_combination: "Email hoặc Password không hợp lệ"

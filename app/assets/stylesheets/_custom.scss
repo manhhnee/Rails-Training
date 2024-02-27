@@ -1,5 +1,5 @@
-@import 'bootstrap-sprockets';
-@import 'bootstrap';
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 /* universal */
 body {
@@ -77,4 +77,13 @@ aside {
 
 .gravatar_edit {
   margin-top: 15px;
+}
+
+.dropdown-menu.active {
+  display: block;
+}
+
+.new_user {
+  display: flex;
+  flex-direction: column;
 }
