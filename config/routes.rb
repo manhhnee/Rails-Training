@@ -1,11 +1,17 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  #sessions
+  get "/login", to: "sessions#new"
+  post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
+  #static pages
   root "static_pages#home"
   get "static_pages/home"
   get "static_pages/help"
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  #sign up
   get "signup", to: "users#new"
   post "signup", to: "users#create"
   resources :users, only: :show
+
 end

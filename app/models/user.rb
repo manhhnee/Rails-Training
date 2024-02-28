@@ -14,6 +14,21 @@ class User < ApplicationRecord
   validates :birthday, :gender, presence: true
   validate :birthday_within_last_100_years
 
+  class << self
+    def new_token
+      SecureRandom.urlsafe_base64
+    end
+
+    def digest(string)
+      cost = if ActiveModel::SecurePassword.min_cost
+               BCrypt::Engine::MIN_COST
+             else
+               BCrypt::Engine.cost
+             end
+      BCrypt::Password.create string, cost: cost
+    end
+  end
+
   private
 
   def downcase
