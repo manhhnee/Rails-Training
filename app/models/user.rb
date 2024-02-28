@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  attr_accessor :remember_token
+
   VALIDATE_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   has_secure_password
@@ -25,8 +27,21 @@ class User < ApplicationRecord
              else
                BCrypt::Engine.cost
              end
-      BCrypt::Password.create string, cost: cost
+      BCrypt::Password.create(string, cost: cost)
     end
+  end
+
+  def remember
+    self.remember_token = User.new_token
+    update_column :remember_digest, User.digest(remember_token)
+  end
+
+  def forget
+    update_column :remember_digest, nil
+  end
+
+  def authenticate?(remember_token)
+    BCrypt::Password.new(remember_digest).is_password? remember_token
   end
 
   private

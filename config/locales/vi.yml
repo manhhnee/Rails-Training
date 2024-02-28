@@ -23,6 +23,7 @@ vi:
       log_in: "Đăng nhập"
       sign_up_now: "Đăng ký ngay"
       new_user: "Người dùng mới"
+      remember_me: "Lưu cookie trên máy ?"
   users:
     new:
       sign_up: "Đăng ký"

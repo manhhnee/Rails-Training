@@ -23,6 +23,7 @@ en:
       log_in: "Log In"
       sign_up_now: "Sign Up Now"
       new_user: "New User ?"
+      remember_me: "Remember Me On This Computer"
   users:
     new:
       sign_up: "Sign Up"
