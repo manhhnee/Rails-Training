@@ -6,15 +6,21 @@ class User < ApplicationRecord
   VALIDATE_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   has_secure_password
+
   before_save :downcase
 
   validates :name, presence: true, length: { maximum: Settings.DIGIT_50 }
 
   validates :email, presence: true, length: { maximum: Settings.DIGIT_255 },
-                    format: { with: VALIDATE_EMAIL_REGEX }, uniqueness: true
+            format: { with: VALIDATE_EMAIL_REGEX }, uniqueness: true
+  validates :password, presence: true,
+            length: { minimum: Settings.DIGIT_6 }, allow_nil: true
 
   validates :birthday, :gender, presence: true
-  validate :birthday_within_last_100_years
+
+  validate :birthday_within_last_100_years, if: -> { birthday.present? }
+
+  scope :sort_by_name, -> { order(:name) }
 
   class << self
     def new_token
@@ -51,8 +57,8 @@ class User < ApplicationRecord
   end
 
   def birthday_within_last_100_years
-    return unless birthday < Settings.HUNDRED_YEARS.years.ago.to_date
-
-    errors.add(:birthday, :birthday_within_last_100_years)
+    if birthday < Settings.HUNDRED_YEARS.years.ago.to_date
+      errors.add(:birthday, :birthday_within_last_100_years)
+    end
   end
 end
