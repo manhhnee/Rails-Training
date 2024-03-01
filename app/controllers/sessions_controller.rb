@@ -7,9 +7,14 @@ class SessionsController < ApplicationController
 
   def create
     if @user.authenticate params.dig(:session, :password)
-      log_in @user
-      params.dig(:session, :remember_me) == "1" ? remember(@user) : forget(@user)
-      redirect_to @user
+      if @user.activated?
+        reset_session
+        params.dig(:session, :remember_me) == "1" ? remember(@user) : forget(@user)
+        log_in @user
+        redirect_back_or @user
+      else
+        flash[:warning] = t("not_active")
+      end
     else
       flash.now[:danger] = t("invalid_email_password_combination")
       render :new
@@ -27,7 +32,7 @@ class SessionsController < ApplicationController
     @user = User.find_by email: params.dig(:session, :email)&.downcase
     return if @user
 
-    flash.now[:danger] = t("user_not_found")
+    flash.now[:danger] = t("layouts.messages.user_not_found")
     render :new
   end
 end
