@@ -38,4 +38,17 @@ module SessionsHelper
     cookies.delete(:user_id)
     cookies.delete(:remember_token)
   end
+
+  def current_user?(user)
+    user.id == current_user.id
+  end
+
+  def redirect_back_or(default)
+    redirect_to(session[:fowarding_url] || default)
+    session.delete(:fowarding_url)
+  end
+
+  def store_location
+    session[:fowarding_url] = request.original_url if request.get?
+  end
 end

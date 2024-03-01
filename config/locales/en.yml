@@ -10,6 +10,13 @@ en:
     messages:
       success: "Sign in successfully!"
       error: "Sign in fail, please try again!"
+      updated_success: "Updated Successfully!"
+      edit_error: "You cannot edit this account."
+      user_not_logged_in: "Please log in !"
+      user_not_found: "User not found"
+      user_deleted: "User deleted !"
+      deleted_fail: "Deleted fail !"
+      admin_error: "You do not a admin"
   helpers:
     page_title: "Ruby on Rails Tutorials Sample App"
   static_pages:
@@ -29,5 +36,11 @@ en:
       sign_up: "Sign Up"
       create_my_account: "Create My Account"
       confirmation: "Confirmation"
+    edit:
+      save_changes: "Save Changes"
+      update_profile: "Update your profile"
+    index:
+      all_users: "All Users"
+      not_found_user: "User not found !"
+    delete: "DELETE ?"
   invalid_email_password_combination: "Invalid Email or Password"
-  user_not_found: "User not found"
