@@ -1,20 +1,27 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  attr_accessor :remember_token
+  attr_accessor :remember_token, :activation_token
 
   VALIDATE_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   has_secure_password
+
   before_save :downcase
+  before_create :create_activation_digest
 
   validates :name, presence: true, length: { maximum: Settings.DIGIT_50 }
 
   validates :email, presence: true, length: { maximum: Settings.DIGIT_255 },
-                    format: { with: VALIDATE_EMAIL_REGEX }, uniqueness: true
+            format: { with: VALIDATE_EMAIL_REGEX }, uniqueness: true
+  validates :password, presence: true,
+            length: { minimum: Settings.DIGIT_6 }, allow_nil: true
 
   validates :birthday, :gender, presence: true
-  validate :birthday_within_last_100_years
+
+  validate :birthday_within_last_100_years, if: -> { birthday.present? }
+
+  scope :sort_by_name, -> { order(:name) }
 
   class << self
     def new_token
@@ -40,8 +47,19 @@ class User < ApplicationRecord
     update_column :remember_digest, nil
   end
 
-  def authenticate?(remember_token)
-    BCrypt::Password.new(remember_digest).is_password? remember_token
+  def authenticate?(attribute, token)
+    digest = send "#{attribute}_digest"
+    return false unless digest
+
+    BCrypt::Password.new(digest).is_password? token
+  end
+
+  def activate
+    update_columns activated: true, activated_at: Time.zone.now
+  end
+
+  def send_activation_email
+    UserMailer.account_activation(self).deliver_now
   end
 
   private
@@ -50,9 +68,14 @@ class User < ApplicationRecord
     email.downcase!
   end
 
-  def birthday_within_last_100_years
-    return unless birthday < Settings.HUNDRED_YEARS.years.ago.to_date
+  def create_activation_digest
+    self.activation_token = User.new_token
+    self.activation_digest = User.digest(activation_token)
+  end
 
-    errors.add(:birthday, :birthday_within_last_100_years)
+  def birthday_within_last_100_years
+    if birthday < Settings.HUNDRED_YEARS.years.ago.to_date
+      errors.add(:birthday, :birthday_within_last_100_years)
+    end
   end
 end
