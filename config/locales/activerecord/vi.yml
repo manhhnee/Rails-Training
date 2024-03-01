@@ -15,3 +15,6 @@ vi:
             birthday:
               blank: "Không thể bỏ trống"
               birthday_within_last_100_years: "phải bé hơn 100 tuổi"
+  users:
+    index:
+      all_users: ""
