@@ -11,9 +11,9 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: Settings.DIGIT_50 }
 
   validates :email, presence: true, length: { maximum: Settings.DIGIT_255 },
-            format: { with: VALIDATE_EMAIL_REGEX }, uniqueness: true
+                    format: { with: VALIDATE_EMAIL_REGEX }, uniqueness: true
   validates :password, presence: true,
-            length: { minimum: Settings.DIGIT_6 }, allow_nil: true
+                       length: { minimum: Settings.DIGIT_6 }, allow_nil: true
 
   validates :birthday, :gender, presence: true
 
@@ -86,8 +86,8 @@ class User < ApplicationRecord
   end
 
   def birthday_within_last_100_years
-    if birthday < Settings.HUNDRED_YEARS.years.ago.to_date
-      errors.add(:birthday, :birthday_within_last_100_years)
-    end
+    return unless birthday < Settings.HUNDRED_YEARS.years.ago.to_date
+
+    errors.add(:birthday, :birthday_within_last_100_years)
   end
 end
