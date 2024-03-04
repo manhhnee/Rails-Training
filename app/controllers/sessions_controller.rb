@@ -35,9 +35,9 @@ class SessionsController < ApplicationController
   end
 
   def check_activation
-    if @user && !@user.activated?
-      flash[:warning] = t("not_active")
-      redirect_to root_url
-    end
+    return unless @user && !@user.activated?
+
+    flash[:warning] = t("not_active")
+    redirect_to root_url
   end
 end

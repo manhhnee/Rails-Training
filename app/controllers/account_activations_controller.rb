@@ -30,5 +30,4 @@ class AccountActivationsController < ApplicationController
     flash[:danger] = t("layouts.messages.invalid_link")
     redirect_to root_url
   end
-
 end

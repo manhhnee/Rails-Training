@@ -7,6 +7,8 @@ vi:
       log_in: "Đăng nhập"
       log_out: "Đăng xuất"
       profile: "Thông tin cá nhân"
+      account: "Tài khoản"
+      setting: "Cài đặt"
     messages:
       success: "Đăng nhập thành công !"
       error: "Đăng nhập thất bại, vui lòng thử lại !"
@@ -20,6 +22,13 @@ vi:
       account_active: "Tài khoản đã được kích hoạt !"
       invalid_link: "Không tồn tại đường dẫn này !"
       account_activation: "Kích hoạt tài khoản"
+      password_reset: "Đặt lại mật khẩu"
+      user_actived: "Người dùng đang được kích hoạt!"
+      password_reset_error: "Lỗi đặt lại mật khẩu"
+      password_update_success: "Cập nhật mật khẩu thành công !"
+      email_instructions: "Email được gửi kèm hướng dẫn đặt lại mật khẩu"
+      email_not_found: "Không tìm thấy địa chỉ email"
+      password_expired: "Việc đặt lại mật khẩu đã hết hạn"
       activation_failed: "Kích hoạt thất bại"
   helpers:
     page_title: "Ruby on Rails Tutorials Sample App"
@@ -35,6 +44,7 @@ vi:
       sign_up_now: "Đăng ký ngay"
       new_user: "Người dùng mới"
       remember_me: "Lưu cookie trên máy ?"
+      forgot_password: "Quên mật khẩu ?"
   users:
     new:
       sign_up: "Đăng ký"
@@ -53,6 +63,20 @@ vi:
       welcome_text: "Chào mừng đến với Sample App, chào "
       content: ". Vui lòng kiểm tra gmail để kích hoạt tài khoản của bạn."
       activate: "Kích hoạt"
+    password_reset:
+      title: "Quên mật khẩu"
+      instruct: "Để đặt lại mật khẩu vui lòng nhấn vào link: "
+      instruct2: "Link này chỉ tồn tại trong 1 giờ"
+      instruct3: "Nếu bạn không yêu cầu đặt lại mật khẩu, vui lòng bỏ qua email này và mật khẩu của bạn sẽ giữ nguyên."
+      reset_password: "Đặt lại mật khẩu"
   invalid_email_password_combination: "Email hoặc Password không hợp lệ"
   not_active: "Kích hoạt tài khoản không thành công. Vui lòng kiểm tra lại !"
   check_email_noti: "Vui lòng kiểm tra gmail để kích hoạt tài khoản"
+  password_resets:
+    edit:
+      reset_password: "Đặt lại mật khẩu"
+      confirmation: "Xác nhận"
+      update_password: "Thay đổi mật khẩu"
+    new:
+      forgot_password: "Quên mật khẩu ?"
+      submit: "Xác nhận"
