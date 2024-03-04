@@ -17,6 +17,16 @@ en:
       user_deleted: "User deleted !"
       deleted_fail: "Deleted fail !"
       admin_error: "You do not a admin"
+      account_active: "Account activated!"
+      invalid_link: "Invalid activation link"
+      account_activation: "Account activation"
+      password_reset: "Password reset"
+      user_actived: "User is in actived!"
+      password_reset_error: "Password reset error"
+      password_update_success: "Password update success!"
+      email_instructions: "Email sent with password reset instructions"
+      email_not_found: "Email address not found"
+      password_expired: "Password reset has expired"
   helpers:
     page_title: "Ruby on Rails Tutorials Sample App"
   static_pages:
@@ -49,6 +59,8 @@ en:
       welcome_text: "Welcome to Sample App, Hi "
       content: ". Please check the gmail to active your account"
       activate: "Activate"
+    password_reset:
+      title: "Reset password"
   invalid_email_password_combination: "Invalid Email or Password"
   not_active: "Account not activated. Check your email for the activation link."
   check_email_noti: "Please check your email to active your account"

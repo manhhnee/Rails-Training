@@ -1,11 +1,9 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  attr_accessor :remember_token, :activation_token
+  attr_accessor :remember_token, :activation_token, :reset_token
 
   VALIDATE_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-
-  has_secure_password
 
   before_save :downcase
   before_create :create_activation_digest
@@ -22,6 +20,7 @@ class User < ApplicationRecord
   validate :birthday_within_last_100_years, if: -> { birthday.present? }
 
   scope :sort_by_name, -> { order(:name) }
+  has_secure_password
 
   class << self
     def new_token
@@ -60,6 +59,19 @@ class User < ApplicationRecord
 
   def send_activation_email
     UserMailer.account_activation(self).deliver_now
+  end
+
+  def create_reset_digest
+    self.reset_token = User.new_token
+    update_columns reset_digest: User.digest(reset_token), reset_sent_at: Time.zone.now
+  end
+
+  def send_password_reset_email
+    UserMailer.password_reset(self).deliver_now
+  end
+
+  def password_reset_expired?
+    reset_sent_at < 1.hours.ago
   end
 
   private
