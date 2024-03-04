@@ -17,6 +17,10 @@ vi:
       user_not_logged_in: "Chưa đăng nhập"
       edit_error: "Sửa thất bại"
       admin_error: "Bạn không phải là admin, không thể xóa"
+      account_active: "Tài khoản đã được kích hoạt !"
+      invalid_link: "Không tồn tại đường dẫn này !"
+      account_activation: "Kích hoạt tài khoản"
+      activation_failed: "Kích hoạt thất bại"
   helpers:
     page_title: "Ruby on Rails Tutorials Sample App"
   static_pages:
@@ -36,9 +40,19 @@ vi:
       sign_up: "Đăng ký"
       create_my_account: "Tạo tài khoản mới"
       confirmation: "Xác nhận"
-    delete: "Xóa ?"
     index:
+      all_users: "Danh sách người dùng"
       not_found_user: "Không tìm thấy người dùng"
+    delete: "Xóa ?"
     edit:
+      save_changes: "Lưu thay đổi"
       update_profile: "Cập nhật thông tin cá nhân"
+  user_mailer:
+    account:
+      title: "Sample App"
+      welcome_text: "Chào mừng đến với Sample App, chào "
+      content: ". Vui lòng kiểm tra gmail để kích hoạt tài khoản của bạn."
+      activate: "Kích hoạt"
   invalid_email_password_combination: "Email hoặc Password không hợp lệ"
+  not_active: "Kích hoạt tài khoản không thành công. Vui lòng kiểm tra lại !"
+  check_email_noti: "Vui lòng kiểm tra gmail để kích hoạt tài khoản"
