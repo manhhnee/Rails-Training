@@ -30,11 +30,15 @@ en:
       email_not_found: "Email address not found"
       password_expired: "Password reset has expired"
       activation_failed: "Activation failed"
+      micropost_create: "Micropost created !"
+      micropost_deleted: "Micropost deleted !"
+      micropost_invalid: "Micropost invalid"
   helpers:
     page_title: "Ruby on Rails Tutorials Sample App"
   static_pages:
     home:
       title: "Home"
+      micropost_feed: "Micropost Feed"
     help:
       title: "Help"
       confirmation: "Confirmation"
@@ -53,10 +57,13 @@ en:
     edit:
       save_changes: "Save Changes"
       update_profile: "Update your profile"
+      change: "Change"
     index:
       all_users: "All Users"
       not_found_user: "User not found !"
-    delete: "DELETE ?"
+    delete: "Delete ?"
+    show:
+      microposts: "Microposts"
   user_mailer:
     account:
       title: "Sample App"
@@ -80,3 +87,13 @@ en:
     new:
       forgot_password: "Forgot password"
       submit: "Submit"
+  microposts:
+    micropost:
+      delete: "Delete"
+  shared:
+    micropost:
+      compose: "Compose new micropost..."
+      post: "Post"
+    user_info:
+      view_profile: "View my profile"
+      micropost: "Micropost"

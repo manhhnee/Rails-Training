@@ -118,3 +118,35 @@ aside {
   display: flex;
   flex-direction: column;
 }
+
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+
+span.picture {
+  margin-top: 10px;
+
+  input {
+    border: 0;
+  }
+}
+
+.microposts {
+  display: flex;
+  flex-direction: column;
+
+  li {
+    padding: 10px 0;
+  }
+
+  .gravatar {
+    border-radius: 1000px;
+  }
+
+  .user a {
+    color: #7e5dff;
+  }
+}

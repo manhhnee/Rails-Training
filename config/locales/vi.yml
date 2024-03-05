@@ -30,11 +30,15 @@ vi:
       email_not_found: "Không tìm thấy địa chỉ email"
       password_expired: "Việc đặt lại mật khẩu đã hết hạn"
       activation_failed: "Kích hoạt thất bại"
+      micropost_create: "Tạo micropost thành công !"
+      micropost_deleted: "Xóa micropost thành công !"
+      micropost_invalid: "Micropost không hợp lệ"
   helpers:
     page_title: "Ruby on Rails Tutorials Sample App"
   static_pages:
     home:
       title: "Trang chủ"
+      micropost_feed: "Micropost Feed"
     help:
       title: "Trợ giúp"
       confirmation: "Xác nhận"
@@ -57,6 +61,9 @@ vi:
     edit:
       save_changes: "Lưu thay đổi"
       update_profile: "Cập nhật thông tin cá nhân"
+      change: "Thay đổi"
+    show:
+      microposts: "Microposts"
   user_mailer:
     account:
       title: "Sample App"
@@ -80,3 +87,13 @@ vi:
     new:
       forgot_password: "Quên mật khẩu ?"
       submit: "Xác nhận"
+  microposts:
+    micropost:
+      delete: "Xóa"
+  shared:
+    micropost:
+      compose: "Tạo post mới ..."
+      post: "Đăng"
+    user_info:
+      view_profile: "Xem thông tin cá nhân"
+      micropost: "Micropost"

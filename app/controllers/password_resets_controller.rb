@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class PasswordResetsController < ApplicationController
-  before_action :load_user, :valid_user, :check_expiration, only: %i(edit create update)
+  before_action :load_user, only: %i(edit create update)
+  before_action :valid_user, :check_expiration, only: %i(edit update)
   before_action :check_password_presence, only: :update
 
   def new; end

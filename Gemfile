@@ -41,6 +41,10 @@ gem "turbo-rails"
 
 gem "figaro"
 
+gem "image_processing", "1.12.2"
+
+gem "active_storage_validations", "0.9.8"
+
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]
 end
