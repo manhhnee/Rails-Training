@@ -7,6 +7,8 @@ en:
       log_in: "Log In"
       log_out: "Log Out"
       profile: "Profile"
+      account: "Account"
+      setting: "Setting"
     messages:
       success: "Sign in successfully!"
       error: "Sign in fail, please try again!"
@@ -20,6 +22,13 @@ en:
       account_active: "Account activated!"
       invalid_link: "Invalid activation link"
       account_activation: "Account activation"
+      password_reset: "Password reset"
+      user_actived: "User is in actived!"
+      password_reset_error: "reset error"
+      password_update_success: "Password update success!"
+      email_instructions: "Email sent with password reset instructions"
+      email_not_found: "Email address not found"
+      password_expired: "Password reset has expired"
       activation_failed: "Activation failed"
   helpers:
     page_title: "Ruby on Rails Tutorials Sample App"
@@ -35,6 +44,7 @@ en:
       sign_up_now: "Sign Up Now"
       new_user: "New User ?"
       remember_me: "Remember Me On This Computer"
+      forgot_password: "Forgot password"
   users:
     new:
       sign_up: "Sign Up"
@@ -53,6 +63,20 @@ en:
       welcome_text: "Welcome to Sample App, Hi "
       content: ". Please check the gmail to active your account"
       activate: "Activate"
+    password_reset:
+      title: "Forgot Password"
+      instruct: "To reset your password click the link below:"
+      instruct2: "This link will expire in one hour."
+      instruct3: "If you did not request your password to be reset, please ignore this email and your password will stayas it is."
+      reset_password: "Reset password"
   invalid_email_password_combination: "Invalid Email or Password"
   not_active: "Account not activated. Check your email for the activation link."
   check_email_noti: "Please check your email to active your account"
+  password_resets:
+    edit:
+      reset_password: "Reset password"
+      confirmation: "Confirmation"
+      update_password: "Update password"
+    new:
+      forgot_password: "Forgot password"
+      submit: "Submit"

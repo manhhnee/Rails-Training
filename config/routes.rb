@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   get "signup", to: "users#new"
   post "signup", to: "users#create"
   resources :users
+  resources :password_resets, only: %i(new create edit update)
   resources :account_activations, only: :edit
 end
