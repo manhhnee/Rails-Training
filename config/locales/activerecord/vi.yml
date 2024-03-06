@@ -20,3 +20,5 @@ vi:
             content:
               blank: "Không thể bỏ trống"
   must_be_valid: "Phải đúng định dạng"
+  following: "Theo dõi"
+  followers: "Người theo dõi"

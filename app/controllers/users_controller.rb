@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-  before_action :logged_in_user, except: %i(new create)
+  before_action :logged_in_user, except: %i(new create show)
   before_action :load_user, except: %i(index new create)
   before_action :correct_user, only: %i(edit update)
   before_action :admin_user, only: :destroy
@@ -48,6 +48,18 @@ class UsersController < ApplicationController
       flash[:danger] = I18n.t("layouts.messages.deleted_fail")
       redirect_to user_path
     end
+  end
+
+  def following
+    @title = I18n.t "following"
+    @pagy, @users = pagy @user.following, items: Settings.PAGE_10
+    render :show_follow
+  end
+
+  def followers
+    @title = I18n.t "followers"
+    @pagy, @users = pagy @user.followers, items: Settings.PAGE_10
+    render :show_follow
   end
 
   private
