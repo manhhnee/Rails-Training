@@ -64,6 +64,10 @@ en:
     delete: "Delete ?"
     show:
       microposts: "Microposts"
+    follow:
+      follow: "Follow"
+    unfollow:
+      unfollow: "UnFollow"
   user_mailer:
     account:
       title: "Sample App"
